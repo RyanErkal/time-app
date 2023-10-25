@@ -1,0 +1,49 @@
+[
+	{
+		"123456": {
+			"name": "John Doe",
+			"email": "test@demo.com",
+			"stats": {
+				"areas": {
+					"Reading": {
+						"totalm": 100,
+						"numsessions": 5
+					},
+					"Coding": {
+						"totalm": 100,
+						"numsessions": 5
+					},
+					"Interview Prep": {
+						"totalm": 100,
+						"numsessions": 5
+					}
+				}
+			}
+		}
+	},
+	{
+		"123456": {
+			"name": "John Doe",
+			"email": "test@demo.com",
+			"stats": {
+				"sessions": [
+					{
+						"area": "Reading",
+						"date": "2017-01-01",
+						"duration": 20
+					},
+					{
+						"area": "Coding",
+						"date": "2017-01-01",
+						"duration": 20
+					},
+					{
+						"area": "Interview Prep",
+						"date": "2017-01-01",
+						"duration": 20
+					}
+				]
+			}
+		}
+	}
+]

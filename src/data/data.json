@@ -1,0 +1,44 @@
+[
+	{
+		"name": "Monday",
+		"Reading": 60,
+		"Coding": 240,
+		"Interview Prep": 180
+	},
+	{
+		"name": "Tuesday",
+		"Reading": 60,
+		"Coding": 180,
+		"Interview Prep": 120
+	},
+	{
+		"name": "Wednesday",
+		"Reading": 60,
+		"Coding": 200,
+		"Interview Prep": 100
+	},
+	{
+		"name": "Thursday",
+		"Reading": 60,
+		"Coding": 210,
+		"Interview Prep": 110
+	},
+	{
+		"name": "Friday",
+		"Reading": 60,
+		"pv": 240,
+		"Interview Prep": 90
+	},
+	{
+		"name": "Saturday",
+		"Reading": 60,
+		"Coding": 230,
+		"Interview Prep": 90
+	},
+	{
+		"name": "Sunday",
+		"Reading": 60,
+		"Coding": 170,
+		"Interview Prep": 80
+	}
+]
