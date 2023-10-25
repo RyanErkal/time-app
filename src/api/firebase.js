@@ -72,7 +72,7 @@ export async function getThisMonthData() {
 		...doc.data(),
 		id: doc.id
 	}));
-	return thisMonthArray[0].month1;
+	return thisMonthArray[0];
 }
 
 export async function getThisYearData() {

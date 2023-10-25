@@ -11,9 +11,6 @@ export default function BChart() {
         });
     }, []);
 
-    console.log("***");
-    console.log(thisWeekData);
-
     /* const barData = JSON.stringify(data);
     console.log(barData); */
 

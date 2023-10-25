@@ -1,49 +1,39 @@
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import { useState, useLayoutEffect } from 'react';
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend, LabelList } from 'recharts';
+import { getThisMonthData } from '../api/firebase';
 
-const data = [
-    { name: 'Group A', value: 400 },
-    { name: 'Group B', value: 300 },
-    { name: 'Group C', value: 300 },
-    { name: 'Group D', value: 200 },
-    { name: 'Group E', value: 200 },
-    { name: 'Group F', value: 200 },
-    { name: 'Group G', value: 200 },
-];
-
-const COLORS = ['#dc2626', '#ea580c', '#ca8a04', '#16a34a', '#2563eb', '#9333ea', '#db2777'];
-
-const RADIAN = Math.PI / 180;
-const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }) => {
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-    const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-    return (
-        <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-            {`${(percent * 100).toFixed(0)}%`}
-        </text>
-    );
-};
+const COLORS = ['#8884d8', '#82ca9d', '#12ca9d', '#1884d8'];
 
 export default function PChart() {
+
+    const [thisMonthData, setThisMonthData] = useState([]);
+
+    useLayoutEffect(() => {
+        getThisMonthData().then((data) => {
+            setThisMonthData(data.pie);
+        });
+    }, []);
+
     return (
         <ResponsiveContainer width="100%" height="100%">
             <PieChart>
                 <Pie
-                    data={data}
+                    data={thisMonthData}
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={renderCustomizedLabel}
-                    outerRadius={150}
+                    label={true}
+                    outerRadius={200}
                     fill="#8884d8"
-                    dataKey="value"
-                    active={false}
+                    dataKey="duration"
                 >
+                    <Legend dataKey="area" />
+                    <LabelList dataKey="area" position="top" />
 
-                    {data.map((entry, index) => (
-                        <Cell key={`cell-${index}`} style={{ outline: 'none' }} fill={COLORS[index % COLORS.length]} />
+                    {thisMonthData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
+
                 </Pie>
             </PieChart>
         </ResponsiveContainer>
