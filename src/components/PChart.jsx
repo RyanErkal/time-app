@@ -31,7 +31,7 @@ export default function PChart() {
                     <LabelList dataKey="area" position="top" />
 
                     {thisMonthData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                        <Cell key={`cell-${index}`} style={{ outline: 'none' }} fill={COLORS[index % COLORS.length]} />
                     ))}
 
                 </Pie>
