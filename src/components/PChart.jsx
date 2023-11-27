@@ -24,11 +24,10 @@ export default function PChart() {
                     labelLine={false}
                     label={true}
                     outerRadius={200}
-                    fill="#8884d8"
                     dataKey="duration"
                 >
                     <Legend dataKey="area" />
-                    <LabelList dataKey="area" position="top" />
+                    <LabelList dataKey="area" position="top" fill="white" />
 
                     {thisMonthData.map((entry, index) => (
                         <Cell key={`cell-${index}`} style={{ outline: 'none' }} fill={COLORS[index % COLORS.length]} />

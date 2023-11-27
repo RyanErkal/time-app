@@ -20,14 +20,21 @@ export default function Dashboard() {
     }, [auth.currentUser, navigate]);
 
     return (
-        <div className="flex flex-col justify-center items-center m-6 p-12 max-w-[1280px] w-full bg-slate-600 rounded-2xl">
+        <div className="flex flex-col justify-center items-center m-6 p-12 max-w-[1280px] w-full h-full bg-slate-500 rounded-2xl">
             <h1 className="text-3xl font-bold">Dashboard - {date} - {time}</h1>
             <section className="flex flex-col justify-center items-center mt-12 w-full">
                 <h2 className="text-2xl font-bold">All Time</h2>
-                <div className="w-full">
-                    <p>Total mins focused: 500</p>
-                    <p>Total focus sessions: 40</p>
-                    <p>Avg focus duration: 35</p>
+                <div className="w-full grid grid-cols-2 font-bold text-xl text-center bg-slate-500 py-6 rounded-xl">
+                    <div>
+                        <p>Total mins focused: 500</p>
+                        <p>Total focus sessions: 40</p>
+                        <p>Avg focus duration: 35</p>
+                    </div>
+                    <div>
+                        <p>Total mins focused: 500</p>
+                        <p>Total focus sessions: 40</p>
+                        <p>Avg focus duration: 35</p>
+                    </div>
                 </div>
             </section>
             <section className="flex flex-col justify-center items-center mt-12 w-full">

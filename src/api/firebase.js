@@ -81,5 +81,5 @@ export async function getThisYearData() {
 		...doc.data(),
 		id: doc.id
 	}));
-	return thisYearArray[0].year1;
+	return thisYearArray[0];
 }

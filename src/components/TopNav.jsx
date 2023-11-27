@@ -26,6 +26,9 @@ export default function TopNav() {
                 :
                 <ul className="flex flex-row px-12 gap-6 font-bold text-lg">
                     <li>
+                        <Link to="/dashboard">Dashboard</Link>
+                    </li>
+                    <li>
                         <Link to="/about">About</Link>
                     </li>
                     <li onClick={logout}>
